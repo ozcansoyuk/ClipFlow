@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>ClipFlow</string>
+	<key>CFBundleDisplayName</key>
+	<string>ClipFlow</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.ozcan.clipflow</string>
+	<key>CFBundleExecutable</key>
+	<string>ClipFlow</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<!-- MAS yüklemesi için zorunlu: App Store kategorisi. -->
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
+	<!-- Şifreleme beyanı: yalnızca muaf SHA-256 özetleme (CryptoKit) kullanılır,
+	     özel şifreleme yok → ihracat uyumluluk sorusu otomatik geçilir. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2026 Özcan Soyuk. MIT Lisansı ile dağıtılır.</string>
+
+	<!--
+	  ÖNEMLİ NOT: Erişilebilirlik (Accessibility) TCC diyaloğu macOS'te
+	  sistem tarafından üretilir ve Info.plist üzerinden ÖZELLEŞTİRİLEMEZ
+	  (kameradaki NSCameraUsageDescription'ın aksine resmi bir karşılığı
+	  yoktur). Aşağıdaki anahtar; niyeti belgelemek, App Review'a şeffaflık
+	  göstermek ve Apple ileride bu anahtarı okumaya başlarsa hazır olmak
+	  için eklenmiştir. Kullanıcıya yönelik asıl açıklama, uygulama içi
+	  onboarding ekranında verilmelidir.
+	-->
+	<key>NSAccessibilityUsageDescription</key>
+	<string>ClipFlow, yalnızca siz listeden bir öge seçtiğinizde, seçiminizi imlecin bulunduğu uygulamaya otomatik yapıştırmak (⌘V tuş vuruşunu simüle etmek) için Erişilebilirlik iznine ihtiyaç duyar. Klavyeniz asla izlenmez veya kaydedilmez; tüm pano verileriniz yalnızca cihazınızda saklanır.</string>
+
+	<!--
+	  Yedek/şeffaflık: Uygulama şu an Apple Events GÖNDERMEZ (CGEvent
+	  kullanır). İleride System Events tabanlı bir yedek yapıştırma yolu
+	  eklenirse bu metin sistem diyaloğunda gösterilir.
+	-->
+	<key>NSAppleEventsUsageDescription</key>
+	<string>ClipFlow, seçtiğiniz pano ögesini aktif uygulamaya otomatik yapıştırabilmek için bu izne ihtiyaç duyar. Hiçbir veriniz cihazınız dışına çıkmaz.</string>
+</dict>
+</plist>

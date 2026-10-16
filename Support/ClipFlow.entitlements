@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Mac App Store için ZORUNLU: App Sandbox açık.
+	-->
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+
+	<!--
+	  BİLİNÇLİ OLARAK EKLENMEYENLER — ve neden:
+
+	  • com.apple.security.temporary-exception.apple-events  → EKLEMEYİN.
+	    Apple Events göndermiyoruz (NSAppleScript / System Events yok).
+	    Otomatik yapıştırma, kullanıcının Sistem Ayarları > Erişilebilirlik
+	    üzerinden verdiği TCC izniyle CGEvent API'si kullanılarak yapılır;
+	    bu yöntem HİÇBİR entitlement gerektirmez. Temporary exception'lar
+	    günümüz App Review pratiğinde neredeyse her zaman red sebebidir.
+
+	  • com.apple.security.automation.apple-events  → Gerekmez.
+	    Yalnızca AppleScript ile başka uygulamaları otomatize etseydik
+	    gerekirdi; CGEvent yolu bunu kullanmaz.
+
+	  • "Accessibility entitlement"  → BÖYLE BİR ANAHTAR YOKTUR.
+	    Erişilebilirlik, entitlement ile değil; kullanıcının kendi eliyle
+	    Sistem Ayarları'ndan verdiği izinle (TCC) çalışır. Sandbox bu izni
+	    engellemez.
+
+	  • Network (client/server)  → Uygulamada tek satır ağ kodu yok;
+	    eklenmemesi, "veri yerelde kalır" beyanımızın teknik kanıtıdır.
+
+	  • Dosya erişim entitlement'ları (user-selected vb.)  → Gerekmez.
+	    Sabitlenen ögeler uygulamanın kendi sandbox container'ına yazılır
+	    (~/Library/Containers/com.ozcan.clipflow/Data/Library/Application Support/),
+	    bu konum için izin gerekmez.
+	-->
+</dict>
+</plist>
